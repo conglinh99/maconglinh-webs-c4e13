@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% if bmi < 16 %}
+    <h3>You're severely underweight</h3>
+    {% if bmi < 18.5 %}
+    <h3>You're underweight</h3>
+    {% if bmi < 25 %}
+    <h3>You're normal</h3>
+    {% if bmi < 30 %}
+    <h3>You're overweight</h3>
+    {% else %}
+    <h3>You're obese</h3>
+    {% endif %}
+  </body>
+</html>
