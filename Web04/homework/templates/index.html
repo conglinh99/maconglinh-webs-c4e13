@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for item in items %}
+      <div class="">
+        <h4>Tên sách: {{ item.title }}</h4>
+        <h4>Tác giả: {{ item.author }}</h4>
+        <img src="{{ item.image }}" alt="">
+        <p> <b>Miêu tả:</b> {{ item.description }}</p>
+        <p> <b>Giá:</b> {{ item.price }} VNĐ</p>
+      </div>
+    {% endfor %}
+  </body>
+</html>
