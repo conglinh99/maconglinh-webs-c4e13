@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block page_content %}
+<div class="container">
+  <form class="" method="post">
+    <input class="form-control" type="text" name="title" value="{{ item.title }}" placeholder="Tên">
+    <input class="form-control" type="text" name="author" value="{{ item.author }}" placeholder="Tác giả">
+    <textarea name="description" rows="8" cols="80" placeholder="Mô tả">{{ item.description }}</textarea>
+    <!-- <input class="form-control" type="text" name="" value="{{ item.description }}" placeholder="Mô tả"> -->
+    <input class="form-control" type="text" name="image" value="{{ item.image }}" placeholder="Link ảnh">
+    <input class="form-control" type="int" name="price" value="{{ item.price }}" placeholder="Giá">
+
+    {% for message in get_flashed_messages() %}
+    <p class='text-success'>{{ message }}</p>
+    {% endfor %}
+
+
+
+    <input type="submit" class="btn btn-primary"name="" value="Sửa">
+  </form>
+</div>
+
+{% endblock %}

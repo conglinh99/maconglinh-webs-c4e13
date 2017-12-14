@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Quản trị
+{% endblock %}
+
+{% block page_content %}
+<div class="row m-3">
+  <div class="col-md-4 m-auto">
+      <body>
+        {% for item in items %}
+        <table border="1px">
+          <thead>
+            <th>Tên</th>
+            <th>Tác giả</th>
+            <th>Mô tả</th>
+            <th>Link ảnh</th>
+            <th>Giá tiền</th>
+            <th>Option</th>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>{{ item.title }}</td>
+              <td>{{ item.author }}</td>
+              <td>{{ item.description }}</td>
+
+            <td>
+              <a href="{{ item.image }}">Link</a>
+            </td>
+            <td>{{ item.price }}</td>
+            <td>
+            <a href="/edit_item/{{item.id}}"><i class="fa fa-pencil text-dark" aria-hidden="true"></i></a>
+
+            <a href="/delete_item/{{item.id}}"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+          </tbody>
+          </table>
+          {% endfor %}
+
+        </body>
+
+      </div>
+
+    </div>
+{% endblock %}
